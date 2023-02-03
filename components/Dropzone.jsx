@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { ArrowUpTrayIcon, XMarkIcon } from '@heroicons/react/24/solid'
 
 const Dropzone = ({ className }) => {
   const [files, setFiles] = useState([])
@@ -41,11 +41,14 @@ const Dropzone = ({ className }) => {
         })}
       >
         <input {...getInputProps()} />
-        {isDragActive ? (
-          <p>Drop the files here ...</p>
-        ) : (
-          <p>Drag & drop some files here, or click to select files</p>
-        )}
+        <div className='flex flex-col items-center justify-center gap-4'>
+          <ArrowUpTrayIcon className='w-5 h-5 fill-current' />
+          {isDragActive ? (
+            <p>Drop the files here ...</p>
+          ) : (
+            <p>Drag & drop files here, or click to select files</p>
+          )}
+        </div>
       </div>
       <section className='mt-10'>
         <div className='flex gap-4'>
