@@ -107,7 +107,7 @@ const Dropzone = ({ className }) => {
         <h3 className='title text-lg font-semibold text-neutral-600 mt-10 border-b pb-3'>
           Accepted Files
         </h3>
-        <ul className='mt-6 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-12 gap-10'>
+        <ul className='mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10'>
           {files.map(file => (
             <li key={file.name} className='relative h-32 rounded-md shadow-lg'>
               <Image
@@ -118,7 +118,7 @@ const Dropzone = ({ className }) => {
                 onLoad={() => {
                   URL.revokeObjectURL(file.preview)
                 }}
-                className='h-full w-full object-cover rounded-md'
+                className='h-full w-full object-contain rounded-md'
               />
               <button
                 type='button'
